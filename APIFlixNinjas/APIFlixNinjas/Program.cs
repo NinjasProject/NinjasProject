@@ -13,6 +13,7 @@ namespace APIFlixNinjas
     {
         public static void Main(string[] args)
         {
+            string name = string.Empty;
             CreateHostBuilder(args).Build().Run();
         }
 
