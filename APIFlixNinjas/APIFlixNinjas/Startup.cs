@@ -6,8 +6,10 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Microsoft.OpenApi.Models;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -26,6 +28,14 @@ namespace APIFlixNinjas
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.AddSwaggerGen(swag =>
+            {
+                swag.SwaggerDoc("v0", new OpenApiInfo { Title = "APIFlixNinjas Service", Version = "v0" });
+                var basePath = AppContext.BaseDirectory;
+                var xmlPath = Path.Combine(basePath, "APIFlixNinjas.xml");
+                swag.IncludeXmlComments(xmlPath);
+                
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -46,6 +56,8 @@ namespace APIFlixNinjas
             {
                 endpoints.MapControllers();
             });
+            app.UseSwagger();
+            app.UseSwaggerUI(x => x.SwaggerEndpoint("v0/swagger.json", "APIFlixNinjas Service"));
         }
     }
 }
