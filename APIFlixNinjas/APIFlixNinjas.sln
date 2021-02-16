@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30907.101
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "APIFlixNinjas", "APIFlixNinjas\APIFlixNinjas.csproj", "{DE7567E8-AC6A-4133-9A2D-4B0975FFB1D3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "APIFlixNinjas", "APIFlixNinjas\APIFlixNinjas.csproj", "{DE7567E8-AC6A-4133-9A2D-4B0975FFB1D3}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "APIFlixNinjas.Data", "APIFlixNinjas.Data\APIFlixNinjas.Data.csproj", "{32C3A091-B363-40BA-9D14-56D66D30FC30}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "APIFlixNinjas.Models", "APIFlixNinjas.Models\APIFlixNinjas.Models.csproj", "{F2E4F47F-B876-4806-9833-6E5B1AEB8C37}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{DE7567E8-AC6A-4133-9A2D-4B0975FFB1D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DE7567E8-AC6A-4133-9A2D-4B0975FFB1D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DE7567E8-AC6A-4133-9A2D-4B0975FFB1D3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{32C3A091-B363-40BA-9D14-56D66D30FC30}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{32C3A091-B363-40BA-9D14-56D66D30FC30}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{32C3A091-B363-40BA-9D14-56D66D30FC30}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{32C3A091-B363-40BA-9D14-56D66D30FC30}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F2E4F47F-B876-4806-9833-6E5B1AEB8C37}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F2E4F47F-B876-4806-9833-6E5B1AEB8C37}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F2E4F47F-B876-4806-9833-6E5B1AEB8C37}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F2E4F47F-B876-4806-9833-6E5B1AEB8C37}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
