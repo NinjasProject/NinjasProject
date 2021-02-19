@@ -1,6 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\APIFlixNinjas",
+    "\\APIFlixNinjas\\APIFlixNinjas",
+    "\\APIFlixNinjas\\APIFlixNinjas\\Controllers"
   ],
   "PreviewInSolutionExplorer": false
 }
