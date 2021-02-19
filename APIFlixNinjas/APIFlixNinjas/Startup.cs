@@ -1,7 +1,10 @@
+using APIFlixNinjas.Data;
+using Lamar.Microsoft.DependencyInjection;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -27,15 +30,21 @@ namespace APIFlixNinjas
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddMvc();
             services.AddControllers();
+            services.AddLamar(new ApplicationRegistry());
             services.AddSwaggerGen(swag =>
             {
                 swag.SwaggerDoc("v0", new OpenApiInfo { Title = "APIFlixNinjas Service", Version = "v0" });
                 var basePath = AppContext.BaseDirectory;
                 var xmlPath = Path.Combine(basePath, "APIFlixNinjas.xml");
                 swag.IncludeXmlComments(xmlPath);
-                
+                swag.DescribeAllEnumsAsStrings();
+                swag.DescribeAllParametersInCamelCase();
+                swag.CustomSchemaIds(i => i.FullName);
             });
+            services.AddDbContext<APIFlixNinjasDbContext>(options => options.UseSqlServer(Configuration["database:connection"], b => b.MigrationsAssembly("APIFlixNinjas")));
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

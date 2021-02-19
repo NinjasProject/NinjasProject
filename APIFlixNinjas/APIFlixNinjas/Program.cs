@@ -15,14 +15,12 @@ namespace APIFlixNinjas
     {
         public static void Main(string[] args)
         {
-            string name = string.Empty;
             CreateHostBuilder(args).Build().Run();
         }
 
         public static IWebHostBuilder CreateHostBuilder(string[] args) =>
-        WebHost.CreateDefaultBuilder(args)
-       .UseLamar()
-       .UseStartup<Startup>();  
-
+           WebHost.CreateDefaultBuilder(args)
+           .UseLamar()
+           .UseStartup<Startup>();
     }
 }
